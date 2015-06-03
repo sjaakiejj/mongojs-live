@@ -1,4 +1,6 @@
 # MongoJS Live
+*Disclaimer: This library is currently a WIP. Issues are expected at this stage, and tests are in the process of being written. In its current form, this can be considered more of a proof of concept than a production stage library. Treat it as such.*
+
 A wrapper for the [mongojs](https://github.com/mafintosh/mongojs) node-module that enables cursor observation, enabling the automatic updating of query results in a meteor-like style.
 
 ## Install
