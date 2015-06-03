@@ -1,0 +1,29 @@
+{
+  "name": "MongoJS-Live",
+  "version": "0.0.0",
+  "description": "An experimental library to mimic Meteor's livequery functionality without the use of capped collections",
+  "main": "mongojs-live.coffee",
+  "dependencies": {
+    "lodash": "^3.9.3",
+    "mongo-json-query": "^0.0.8",
+    "mongohooks": "^0.3.0"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.9.3"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com"
+  },
+  "keywords": [
+    "mongojs",
+    "livequery",
+    "npm",
+    "node"
+  ],
+  "author": "Jacobus Meulen",
+  "license": "MIT"
+}
