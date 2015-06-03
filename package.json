@@ -5,7 +5,7 @@
   "main": "mongojs-live.coffee",
   "dependencies": {
     "lodash": "^3.9.3",
-    "mongo-json-query": "^0.0.8",
+    "mongo-json-query": "git+https://github.com/sjaakiejj/mongo-json-query.git",
     "mongohooks": "^0.3.0"
   },
   "devDependencies": {
