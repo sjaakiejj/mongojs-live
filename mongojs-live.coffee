@@ -95,18 +95,18 @@ afterUpdateHook = (originalUpdate) ->
 
 
 afterRemoveHook = (originalRemove) ->
+
   (query, justOne, callback) ->
     callback = justOne if _.isFunction(justOne)
     justOne = false if _.isFunction(justOne)
-
     # Establish arguments to apply
-    args = [query,justOne,(err,res) ->
+    args = [query,justOne, (err,res) =>
       callback(err,res) if callback?
       process.nextTick () =>
         @hook.emit "remove", err, query, justOne
     ]
-    originalRemove.apply(@, arguments)
-
+    originalRemove.apply(@, args)
+    
 afterSaveHook = (originalSave) ->
   (doc, callback) ->
     # Establish arguments to apply
@@ -127,6 +127,7 @@ module.exports =
       mongo[collection].hook.setMaxListeners(0)
       mongo[collection].find = wrappedFind(originalFind, mongo, collection)
       mongo[collection].update = afterUpdateHook(mongo[collection].update)
+      mongo[collection].remove = afterRemoveHook(mongo[collection].remove)
 
 
     return mongo
